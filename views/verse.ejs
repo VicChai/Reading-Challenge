@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+
+<main class="container">
+    <div class="mt-5">
+        <h1>Bible Verse Look-Up</h1>
+        <!-- <form action="/verseLookup" method="GET">
+          <div class="mb-3">
+            <label for="verseLookup" class="form-label">Enter the verse you want to lookup</label>
+            <textarea class="form-control" id="verseLookup" name="verseLookup"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div> -->
+          <!-- <button type="submit" class="btn btn-primary">Submit</button>
+        </form> --> 
+    </div>
+    <div class="mb-3">
+        <label for="verseLookup" class="form-label">Enter the verse you want to lookup</label>
+        <textarea class="form-control" id="verseLookup" name="verseLookup"></textarea>
+      </div>
+    <button class="submit btn btn-primary">Submit</button>
+    <button class="reset btn btn-primary">Reset Search</button>
+  </div>
+  
+</main>
+<script src="verseLookup.js"></script>  
+<%- include('partials/footer') -%>
