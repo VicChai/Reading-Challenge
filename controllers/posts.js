@@ -92,7 +92,11 @@ module.exports = {
   },
   getEdit: async (req, res) => {
     try {
-      res.render("edit.ejs");
+      const post = await Post.findById(req.params.id);
+      console.log(post);
+      res.render("edit.ejs", {
+        post,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -104,7 +108,6 @@ module.exports = {
       if (req.file) {
         result = await cloudinary.uploader.upload(req.file.path);
       }
-
       await Post.findByIdAndUpdate(req.params.id, {
         title: req.body.title,
         image: result.secure_url,

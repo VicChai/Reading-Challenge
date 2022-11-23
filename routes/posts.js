@@ -13,7 +13,7 @@ router.post("/createPost", upload.single("file"), postsController.createPost);
 router.put("/likePost/:id", postsController.likePost);
 
 router.get("/getEdit/:id", postsController.getEdit);
-router.put("/editPost/:id", postsController.editPost);
+router.post("/editPost/:id", upload.single("file"), postsController.editPost);
 
 router.delete("/deletePost/:id", postsController.deletePost);
 
