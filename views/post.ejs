@@ -5,7 +5,7 @@
       <h2><%= post.title %></h2>
       <p>By <%= post.createdBy %></p>
       <p><%= post.sharing %></p>
-      <!-- <img class="img-fluid" src="<%= post.image%>" /> -->
+      <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between"> 
         <form
           class="col-1"
@@ -22,6 +22,13 @@
           class="col-3"
         >
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        </form>
+        <form
+          action="/post/getEdit/<%= post.id %>?_method=GET"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fas fa-edit" type="submit"></button>
         </form>
         <%}%>
       </div> 

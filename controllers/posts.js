@@ -41,20 +41,21 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // // Upload image to cloudinary
-      // const result = await cloudinary.uploader.upload(req.file.path);
+      let result = {};
+      if (req.file) {
+        result = await cloudinary.uploader.upload(req.file.path);
+      }
       console.log(req.body);
       await Post.create({
         title: req.body.title,
-        // image: result.secure_url,
-        // cloudinaryId: result.public_id,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
         // caption: req.body.caption,
         sharing: req.body.sharing,
         likes: 0,
         createdBy: req.user.userName,
         user: req.user.id,
       });
-      console.log(req.body);
-      console.log(req.body.sharing);
       console.log("Post has been added!");
       res.redirect("/profile");
     } catch (err) {
@@ -80,27 +81,41 @@ module.exports = {
       // Find post by id
       let post = await Post.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      // await cloudinary.uploader.destroy(post.cloudinaryId);
+      await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
-      await Post.remove({ _id: req.params.id });
+      await Post.deleteOne({ _id: req.params.id });
       console.log("Deleted Post");
       res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");
     }
   },
+  getEdit: async (req, res) => {
+    try {
+      res.render("edit.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
   editPost: async (req, res) => {
     try {
       // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      // await cloudinary.uploader.destroy(post.cloudinaryId);
-      // Delete post from db
-      await Post.remove({ _id: req.params.id });
-      console.log("Deleted Post");
-      res.redirect("/profile");
+      let result = {};
+      if (req.file) {
+        result = await cloudinary.uploader.upload(req.file.path);
+      }
+
+      await Post.findByIdAndUpdate(req.params.id, {
+        title: req.body.title,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        sharing: req.body.sharing,
+      });
+
+      console.log("Edited Post");
+      res.redirect(`/post/${req.params.id}`);
     } catch (err) {
-      res.redirect("/profile");
+      console.log(err);
     }
   },
 };

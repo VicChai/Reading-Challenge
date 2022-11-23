@@ -5,14 +5,14 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // image: {
-  //   type: String,
-  //   required: false,
-  // },
-  // cloudinaryId: {
-  //   type: String,
-  //   required: false,
-  // },
+  image: {
+    type: String,
+    // required: true,
+  },
+  cloudinaryId: {
+    type: String,
+    // required: true,
+  },
   sharing: {
     type: String,
     required: true,
