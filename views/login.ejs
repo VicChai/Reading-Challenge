@@ -11,7 +11,7 @@
       <% }) %> <% } %>
       <form action="/login" method="POST">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
+          <label for="exampleInputEmail1" class="form-label ml-5"
             >Email address</label
           >
           <input
@@ -24,16 +24,23 @@
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="form-label ml-5"
+            >Password</label
+          >
           <input
-            class="ml-5 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 flex-row pl-2"
+            class="ml-12 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 flex-row pl-2"
             type="password"
             class="form-control"
             id="exampleInputPassword1"
             name="password"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button
+          type="submit"
+          class="ml-5 btn btn-primary bg-slate-900 hover:bg-sky-700 rounded px-3 text-white"
+        >
+          Submit
+        </button>
       </form>
     </section>
   </div>

@@ -697,6 +697,10 @@ body::before {
   margin-left: 1.25rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -719,6 +723,10 @@ body::before {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
 }
 
 .box-border {
@@ -1933,14 +1941,14 @@ body::before {
   padding-bottom: 0.5rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .px-2 {
@@ -1953,12 +1961,12 @@ body::before {
   padding-bottom: 0.25rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pl-2 {
   padding-left: 0.5rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-left {
