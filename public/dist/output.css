@@ -697,8 +697,8 @@ body::before {
   margin-left: 1.25rem;
 }
 
-.ml-10 {
-  margin-left: 2.5rem;
+.ml-12 {
+  margin-left: 3rem;
 }
 
 .mb-5 {
@@ -725,8 +725,20 @@ body::before {
   margin-top: 0.5rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .box-border {
@@ -2033,6 +2045,16 @@ body::before {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-3xl {

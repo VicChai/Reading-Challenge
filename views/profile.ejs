@@ -1,46 +1,49 @@
 <%- include('partials/header') -%>
-<div class="container">
+
   <div class="row mt-5">
       <div class="col-6">
           <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <p class="ml-5"><strong>User Name</strong>: <%= user.userName %></p>
+              <p class="ml-5"><strong>Email</strong>: <%= user.email %></p>
+              <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
           </div>
           <div class="mt-5">
-            <h2>Add a post</h2>
+            <h2 class="ml-5 font-bold">Create a new post:</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <label for="title" class="form-label ml-10">Title:</label>
+                  <input type="text" class="form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 flex-row pl-2" id="title" name="title">
               </div>
               <div class="mb-3">
-                <label for="sharing" class="form-label">Sharing</label>
-                <textarea class="form-control" id="sharing" name="sharing"></textarea>
+                <label for="sharing" class="form-label ml-5">Sharing</label>
+                <textarea class="form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 pl-2 " id="sharing" name="sharing"></textarea>
               </div>
               <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
+                <label for="imgUpload" class="form-label ml-5" >Image</label>
+                <input type="file" class="form-control border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 ml-4" id="imageUpload" name="file">
               </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              <button type="submit" class="btn btn-primary ml-5 btn btn-primary bg-slate-900 hover:bg-sky-700 rounded px-3 text-white" value="Upload">Submit</button>
             </form>
           </div>
       </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-                <h2><%= posts[i].title %></h2>
-                <p><%= posts[i].sharing %></p>
-                <img class="img-fluid" src="<%= posts[i].image%>" />
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
+      <div class="ml-5 mt-5 font-bold">Previous posts:</div>
+      <div class="flex-row justify-content-center mt-5">
+        <ul class="flex flex-col list-unstyled">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li class="flex flex-col justify-content-between mt-5">
+              <a href="/post/<%= posts[i]._id%>" class="bg-slate-200 ml-50 mr-50" >
+                <h2 class="flex flex-wrap justify-center"><%= posts[i].title %></h2>
+                <div class="flex flex-wrap justify-center ">
+                  <div class="w-6/12 sm:w-4/12 px-4">
+                    <img src="<%= posts[i].image%>" class="shadow rounded max-w-full h-auto align-middle border-none " />
+                  </div>
+                </div>
+                <p class="flex flex-wrap justify-center"><%= posts[i].sharing %></p>
+              </a>
+            </li>
+          <% } %>
+          </ul>
+      </div>  
       </div>  
     </div>
   </div>
