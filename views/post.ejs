@@ -1,13 +1,13 @@
 <%- include('partials/header') -%>
-<div class="container">
+
   <div class="row justify-content-center mt-5">
     <div class="col-6">
       <h2 class="ml-5">Title: <%= post.title %></h2>
       <p class="ml-5">By: <%= post.createdBy %></p>
       <img class="img-fluid ml-5" src="<%= post.image%>" />
-      <p class="ml-5"><%= post.sharing %></p>
+      <p class="ml-5">Sharing: <%= post.sharing %></p>
       
-      <div class="ml-5 flex justify-between"> 
+      <div class="ml-5 flex justify-around"> 
         <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -53,7 +53,7 @@
     <div class="col-6">
       <ul>
       <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
+        <li class="col-6 justify-content-between mt-5 ml-5">
           <%= comments[i].createdBy%> :
           <%= comments[i].comment%>
           <div>  
@@ -63,7 +63,7 @@
                 method="POST"
                 
               >
-                <button class="btn btn-outline-danger" type="submit">Delete</button>
+                <button class="btn fa fa-trash " type="submit"></button>
               </form>
               <%}%>
         </li>
