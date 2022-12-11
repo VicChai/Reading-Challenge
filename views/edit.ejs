@@ -1,50 +1,50 @@
 <%- include('partials/header') -%>
 
-<div class="mt-5">
-  <h2 class="ml-5 mb-2">Make an edit to your post</h2>
-  <form
-    action="/post/editPost/<%= post.id %>"
-    method="POST"
-    enctype="multipart/form-data"
-  >
-    <div class="mb-3">
-      <label for="title" class="form-label ml-5">Title: </label>
-      <input
-        type="text"
-        class="form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 pl-2"
-        id="title"
-        name="title"
-        value="<%=post.title %>"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="sharing" class="form-label ml-5">Sharing: </label>
-      <textarea
-        class="form-control form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 pl-2"
-        id="sharing"
-        name="sharing"
-      >
-<%=post.sharing %></textarea
-      >
-    </div>
-    <div class="mb-3">
-      <label for="imgUpload" class="form-label ml-5">Image: </label>
-      <input
-        type="file"
-        class="form-control form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200"
-        id="imageUpload"
-        name="file"
-        value="<%=post.image %>"
-      />
-    </div>
-    <button
-      type="submit"
-      class="btn btn-primary ml-5 btn btn-primary bg-slate-900 hover:bg-sky-700 rounded px-3 text-white"
-      value="Upload"
+  <div class="mt-5">
+    <h2 class="ml-5 mb-2">Make an edit to your post</h2>
+    <form
+      action="/post/editPost/<%= post.id %>"
+      method="POST"
+      enctype="multipart/form-data"
     >
-      Submit
-    </button>
-  </form>
+      <div class="mb-3">
+        <label for="title" class="form-label ml-5">Title: </label>
+        <input
+          type="text"
+          class="form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 pl-2"
+          id="title"
+          name="title"
+          value="<%=post.title %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="sharing" class="form-label ml-5">Sharing: </label>
+        <textarea
+          class="form-control form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200 pl-2"
+          id="sharing"
+          name="sharing"
+        >
+  <%=post.sharing %></textarea
+        >
+      </div>
+      <div class="mb-3">
+        <label for="imgUpload" class="form-label ml-5">Image: </label>
+        <input
+          type="file"
+          class="form-control form-control ml-2 border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 bg-zinc-200"
+          id="imageUpload"
+          name="file"
+          value="<%=post.image %>"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary ml-5 btn btn-primary bg-slate-900 hover:bg-sky-700 rounded px-3 text-white"
+        value="Upload"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
 </div>
-
 <%- include('partials/footer') -%>
